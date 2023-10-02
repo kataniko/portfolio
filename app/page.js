@@ -101,7 +101,7 @@ export default function Home() {
 
           <div className='p-5 z-20'>
             <ThreeDHoverBox />
-            {/* <Image onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="shadow my-element" width={350} height={350} src={'/main.jpg'} /> */}
+            
           </div>
 
           <div onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center mt-10 text-2xl md:text-5xl absolute bottom-10 right-20 absolute catch'>Web Developer</div>

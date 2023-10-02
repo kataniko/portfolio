@@ -8,7 +8,7 @@ import './header.css'
 import { motion } from "framer-motion"
 import { SlArrowRight } from 'react-icons/sl';
 
-const page = () => {
+function page() {
   const [activeNav, setActiveNav] = useState("#");
   return (
 
