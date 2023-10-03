@@ -8,7 +8,7 @@ import './header.css'
 import { motion } from "framer-motion"
 import { SlArrowRight } from 'react-icons/sl';
 
-function page() {
+export default function Header() {
   const [activeNav, setActiveNav] = useState("#");
   return (
 
@@ -63,4 +63,3 @@ function page() {
   )
 }
 
-export default page
