@@ -9,9 +9,7 @@ const Mousefollow = () => {
     const { x, y } = point;
     const ref = useRef();
     const [cursorVariant, setCursorVariant] = useState("default");
-    const textEnter = () => setCursorVariant("text");
-    const textLeave = () => setCursorVariant("default");
-
+   
     useEffect(() => {
         if (!ref.current) return;
 

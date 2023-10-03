@@ -74,8 +74,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen min-w-screen ">
+      <Svg />
       <div className='h-screen w-screen bg-white'>
-        <Svg />
         <motion.div
           ref={ref}
           variants={variants}
@@ -90,8 +90,8 @@ export default function Home() {
           <motion.div initial={{ z: 0, opacity: 0, scale: 0.9 }}
             animate={{ x: 0, opacity: 1, scale: 1, }}
             transition={{ duration: 1.4, }}
-            onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center text-5xl md:text-8xl catch pt-24 md:pt16 '>
-            Tomás <p className='text-black text-center mt-2 text-5xl md:text-8xl baca'>Oliveira</p>
+            onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center text-5xl md:text-8xl catch pt-24 md:pt16 z-10 '>
+            Tomás <p  className='text-black text-center mt-2 text-5xl md:text-8xl baca'>Oliveira</p>
           </motion.div>
         </div>
 
