@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { opacity, slideUp } from './anim';
 
-const words = ["Hey","Olá", "Bonjour", "Ciao", "Olá", "やあ", "Hallå", "Guten tag", "Hallo"]
+const words = ["Hey","Olá", "Bonjour", "Ciao", "Ahln", "やあ", "Hallå", "Guten tag", "Hallo"]
 
 export default function Index() {
     const [index, setIndex] = useState(0);
@@ -27,11 +27,11 @@ export default function Index() {
     const curve = {
         initial: {
             d: initialPath,
-            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] }
+            transition: { duration: 1, ease: [0.76, 0, 0.24, 1] }
         },
         exit: {
             d: targetPath,
-            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 }
+            transition: { duration: 1.1, ease: [0.76, 0, 0.24, 1], delay: 0.4 }
         }
     }
 
@@ -39,7 +39,7 @@ export default function Index() {
         <motion.div variants={slideUp} initial="initial" exit="exit" className={styles.introduction}>
             {dimension.width > 0 &&
                 <>
-                    <motion.p variants={opacity} initial="initial" animate="enter"><span></span>{words[index]}</motion.p>
+                    <motion.p className='catch' variants={opacity} initial="initial" animate="enter"><span></span>{words[index]}</motion.p>
                     <svg>
                         <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
                     </svg>
