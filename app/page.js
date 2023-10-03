@@ -74,8 +74,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen min-w-screen ">
-      <Svg />
       <div className='h-screen w-screen bg-white'>
+        <Svg />
         <motion.div
           ref={ref}
           variants={variants}
@@ -101,7 +101,7 @@ export default function Home() {
 
           <div className='p-5 z-20'>
             <ThreeDHoverBox />
-            
+
           </div>
 
           <div onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center mt-10 text-2xl md:text-5xl absolute bottom-10 right-20 absolute catch'>Web Developer</div>
