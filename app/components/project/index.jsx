@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './style.module.css';
 import Image from 'next/image';
 
-export default function index({ index, title, setModal }) {
+export default function Index({ index, title, setModal }) {
 
     return (
 

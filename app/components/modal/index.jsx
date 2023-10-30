@@ -12,7 +12,7 @@ const scaleAnimation = {
 }
 
 // Export the main component
-export default function index({ modal, projects }) {
+export default function Index({ modal, projects }) {
     const { active, index } = modal;  // Destructure 'modal' prop into 'active' and 'index'
     const modalContainer = useRef(null);  // Create a ref for the modal container
     const cursor = useRef(null);  // Create a ref for the cursor element
