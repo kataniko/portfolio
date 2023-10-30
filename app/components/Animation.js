@@ -32,7 +32,7 @@ function Animation() {
     <div ref={animationRef}>
       {/* Your content to be animated */}
       {/* Here, you have a div with some classes and text */}
-      <div className='text-7xl md:text-10xl w-screen text-center catch mt-5 md:mt-20 '>
+      <div className='text-7xl md:text-11xl w-screen text-center catch mt-5 md:mt-20 '>
         About Me
       </div>
     </div>

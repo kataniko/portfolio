@@ -5,8 +5,10 @@ import Preloader from './components/Preloader/index';
 import Landing from './components/Landing/index';
 import Main from "./components/main"
 
+
 export default function Home() {
 
+ 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -14,6 +16,8 @@ export default function Home() {
       async () => {
         const LocomotiveScroll = (await import('locomotive-scroll')).default
         const locomotiveScroll = new LocomotiveScroll();
+
+        
 
         setTimeout(() => {
           setIsLoading(false);

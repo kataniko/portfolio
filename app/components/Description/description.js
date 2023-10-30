@@ -1,24 +1,29 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useRef, useLayoutEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import styles from './style.module.css';
+import Image from 'next/image';
 
-const phrases = ["Hello,", "I'm Tomás Oliveira, a frontend developer with a passion,","for creating engaging user experiences.","Welcome to my portfolio!",]
+const phrases = [
+    { text: "Hello,", start: "0px bottom", end: "100px bottom" },
+    { text: "I'm Tomás Oliveira, a frontend developer with a passion,", start: "100px bottom", end: "200px bottom" },
+    { text: "for creating engaging user experiences.", start: "200px bottom", end: "300px bottom" },
+    { text: "Welcome to my portfolio!", start: "300px bottom", end: "400px bottom" },
+];
 
 export default function Index() {
-
     return (
-        <div className={styles.description} >
-            {
-                phrases.map((phrase, index) => {
-                    return <AnimatedText key={index}>{phrase}</AnimatedText>
-                })
-            }
+        <div className={styles.description}>
+            {phrases.map((phrase, index) => (
+                <AnimatedText key={index} start={phrase.start} end={phrase.end}>
+                    {phrase.text}
+                </AnimatedText>
+            ))}
         </div>
-    )
+    );
 }
 
-function AnimatedText({ children }) {
+function AnimatedText({ children, start, end }) {
     const text = useRef(null);
 
     useLayoutEffect(() => {
@@ -27,14 +32,18 @@ function AnimatedText({ children }) {
             scrollTrigger: {
                 trigger: text.current,
                 scrub: true,
-                start: "0px bottom",
-                end: "400px bottom",
+                start,
+                end,
             },
             opacity: 0,
-            left: "-200px",
-            ease: "power3.Out"
-        })
-    }, [])
+            bottom: "-100px",
+            ease: "power2.Out",
+        });
+    }, [start, end]);
 
-    return <p className='catch text-3xl md:text-6xl' ref={text}>{children}</p>
+    return (
+        <p className='catch text-4xl text-center p-2 md:text-6xl w-4/4' ref={text}>
+            {children}
+        </p>
+    );
 }

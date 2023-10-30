@@ -10,8 +10,10 @@ import Animation from './Animation.js';
 import Description from './Description/description.js'
 import ThreeDHoverBox from './ThreeDHoverBox.js';
 import Svg from './Svg.js';
-
-
+import Folder from './Folder/Folder';
+import useSound from 'use-sound';
+import Project from '../components/project';
+import Modal from '../components/modal';
 
 
 export default function Home() {
@@ -22,6 +24,8 @@ export default function Home() {
     const [cursorVariant, setCursorVariant] = useState("default");
     const main = useRef();
 
+
+
     useEffect(() => {
         (
             async () => {
@@ -29,7 +33,6 @@ export default function Home() {
                 const locomotiveScroll = new LocomotiveScroll();
 
                 setTimeout(() => {
-                    setIsLoading(false);
                     document.body.style.cursor = 'default'
                     window.scrollTo(0, 0);
                 }, 2000)
@@ -68,8 +71,34 @@ export default function Home() {
         }
     }
 
+    const projects = [
+        {
+            title: "KatanaXchain",
+            src: "katana1.jpg",
+            color: "#000000"
+        },
+        {
+            title: "AIonDemand",
+            src: "innovation.jpg",
+            color: "#8C8C8C"
+        },
+        {
+            title: "ajessicanunes",
+            src: "jessi.jpg",
+            color: "#EFE8D3"
+        },
+        {
+            title: "Silencio",
+            src: "silencio.png",
+            color: "#706D63"
+        }
+    ]
+
+
     const textEnter = () => setCursorVariant("text");
     const textLeave = () => setCursorVariant("default");
+    const [modal, setModal] = useState({ active: false, index: 0 })
+
 
     const handleMouseEnter = () => {
         gsap.to('.my-element', { scale: 1.1, duration: 0.5 });
@@ -80,8 +109,8 @@ export default function Home() {
     };
 
     return (
-        <main className="min-h-screen min-w-screen ">
-            <Svg />
+        <main className="h-screen w-screen">
+            {/* <Svg /> */}
             <div className='h-screen w-screen bg-white'>
                 <motion.div
                     ref={ref}
@@ -117,13 +146,37 @@ export default function Home() {
 
             </div>
 
-            <div className='bg-transparent flex flex-col  h-[400vh] w-full'>
+            <div className='bg-black flex flex-col  h-auto w-full'>
 
-                <Image width={2000} height={800} className='object-fit absolute rotate-180' src={"/wave3.svg"} />
+                <div className='h-screen'>
 
-                <Animation />
+                    <Image width={2000} height={800} className='object-fit absolute rotate-180' src={"/wave3.svg"} />
+                    <Animation />
+                    <Folder />
+                    <Description />
+                    <Folder />
 
-                <Description />
+                </div>
+
+            </div>
+
+            <div className='bg-white '>
+                <Image width={1900} height={80} className=' w-screen rotate-180' src={"/wave6.svg"} />
+                <div className='text-7xl md:text-10xl  w-screen text-black  text-center catch '>
+                    Projects
+                </div>
+            </div>
+
+
+
+            <div className='  bg-white p-10 '>
+
+                {
+                    projects.map((project, index) => {
+                        return <Project index={index} title={project.title} setModal={setModal} key={index} />
+                    })
+                }
+                <Modal modal={modal} projects={projects} />
 
             </div>
         </main>
