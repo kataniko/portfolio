@@ -1,17 +1,12 @@
 'use client'
 import Image from 'next/image'
 import { useEffect, useState, useRef } from "react"
-import { AnimatePresence } from 'framer-motion';
-import Mousefollow from "./mousefollow";
 import { motion } from "framer-motion"
-import { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import Animation from './Animation.js';
 import Description from './Description/description.js'
 import ThreeDHoverBox from './ThreeDHoverBox.js';
-import Svg from './Svg.js';
 import Folder from './Folder/Folder';
-import useSound from 'use-sound';
 import Project from '../components/project';
 import Modal from '../components/modal';
 
