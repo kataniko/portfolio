@@ -36,3 +36,32 @@
     transition: all 0.4s;
     font-weight: 300;
 }
+
+@media only screen and (max-width: 600px) {
+    .project {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 10px 50px 20px;
+        border-top: 1px solid rgb(201, 201, 201);
+        cursor: pointer;
+        transition: all 0.2s;
+       
+    }
+
+    .project h2 {
+        font-size: 32px;
+        margin: 0px;
+        font-weight: 400;
+        transition: all 0.4s;
+    }
+
+    .project p {
+        font-size: 14px;
+        transition: all 0.4s;
+        font-weight: 300;
+    }
+
+
+}

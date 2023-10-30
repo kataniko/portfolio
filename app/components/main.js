@@ -143,20 +143,18 @@ export default function Home() {
 
             <div className='bg-black flex flex-col  h-auto w-full'>
 
-                <div className='h-screen'>
-
-                    <Image width={2000} height={800} className='object-fit absolute rotate-180' src={"/wave3.svg"} />
+               
+                    <Image width={2000} height={800} className='object-fit mt-[-1px] absolute rotate-180' src={"/wave3.svg"} />
                     <Animation />
                     <Folder />
                     <Description />
                     <Folder />
-
-                </div>
-
+          
+                
             </div>
 
-            <div className='bg-white '>
-                <Image width={1900} height={80} className=' w-screen rotate-180' src={"/wave6.svg"} />
+            <div className='bg-white'>
+                <Image width={1900} height={100} className=' w-screen rotate-180 mt-[-2px] ml-[-2px] ' src={"/wave6.svg"} />
                 <div className='text-7xl md:text-10xl  w-screen text-black  text-center catch '>
                     Projects
                 </div>
@@ -164,7 +162,7 @@ export default function Home() {
 
 
 
-            <div className='  bg-white p-10 '>
+            <div className='  bg-white '>
 
                 {
                     projects.map((project, index) => {
