@@ -2,12 +2,10 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Header from "./Header/header"
-import useSound from 'use-sound'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
-
-
 
 export const metadata = {
   title: 'Tomás-Oliveira',
