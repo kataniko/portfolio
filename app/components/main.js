@@ -9,6 +9,7 @@ import ThreeDHoverBox from './ThreeDHoverBox.js';
 import Folder from './Folder/Folder';
 import Project from '../components/project';
 import Modal from '../components/modal';
+import Svg from './Svg.js';
 
 
 export default function Home() {
@@ -105,7 +106,7 @@ export default function Home() {
 
     return (
         <main className="h-screen w-screen">
-            {/* <Svg /> */}
+            <Svg />
             <div className='h-screen w-screen bg-white'>
                 <motion.div
                     ref={ref}
@@ -143,14 +144,14 @@ export default function Home() {
 
             <div className='bg-black flex flex-col  h-auto w-full'>
 
-               
-                    <Image width={2000} height={800} className='object-fit mt-[-1px] absolute rotate-180' src={"/wave3.svg"} />
-                    <Animation />
-                    <Folder />
-                    <Description />
-                    <Folder />
-          
-                
+
+                <Image width={2000} height={800} className='object-fit mt-[-1px] absolute rotate-180' src={"/wave3.svg"} />
+                <Animation />
+                <Folder />
+                <Description />
+                <Folder />
+
+
             </div>
 
             <div className='bg-white'>
@@ -170,6 +171,9 @@ export default function Home() {
                     })
                 }
                 <Modal modal={modal} projects={projects} />
+
+            </div>
+            <div className='h-screen bg-white'>
 
             </div>
         </main>

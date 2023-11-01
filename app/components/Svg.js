@@ -14,7 +14,7 @@ export default function Svg() {
                 document.documentElement.clientHeight);
 
         const length = lineRef.current.getTotalLength();
-        const draw = 10 * length * scrollPercent;
+        const draw = 1 * length * scrollPercent;
 
         setStrokeDashOffset(length - draw);
     };
@@ -33,8 +33,8 @@ export default function Svg() {
     return (
         <div className="flex justify-center">
             <motion.svg initial={{ z: 0, opacity: 0, scale: 1 }}
-                animate={{ x: 0, opacity: 1, scale: 1, }}
-                transition={{ duration: 1.4, }} id="svgcontent" className="svg-drawing absolute z-10" width="332" height="1078" viewBox="0 0 332 1078"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                animate={{ x: 0, opacity: 0.2, scale: 1, }}
+                transition={{ duration: 1.4, }} id="svgcontent" className="svg-drawing absolute z-10" width="355" height="3999" viewBox="0 0 355 3999"  fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path ref={lineRef}
                     fill="none"
                     stroke="#222222"
@@ -46,7 +46,7 @@ export default function Svg() {
                     markerStart=""
                     markerMid=""
                     markerEnd=""
-                    id="svg_1" d="M54.5 0.5C48.5 60.6667 40.1 212.2 54.5 337C72.5 493 128.5 536 243 523.5C357.5 511 353 390.5 274.5 350.5C196 310.5 62 333 17.5 501.5C-18.1 636.3 12.6666 835.333 32.5 918L63 1077" />
+                    id="svg_1" d="M138.999 0C140.999 313.2 139.832 532.167 138.999 602.5V896.5C173.499 982.5 238.267 1112.1 142.267 1200.5C46.2672 1288.9 -8.49979 1183.5 2.5 1111.5C6.96147 1082.3 61.8315 979.4 154.232 1081C246.632 1182.6 286.499 1312.5 298.999 1481.5C308.947 1616 289.899 1772.6 215.499 1913C122.499 2088.5 79.5837 2162.52 102.499 2300.5C117.862 2393 370.69 2387 353.499 2285C338.499 2196 244.499 2174.5 180.499 2253.5C152.908 2287.56 148.121 2348.42 102.499 2501C57.499 2651.5 102.499 2819.5 102.499 2819.5L144.5 2984L149 3281.5L90.999 3534.5V4000.5" />
             </motion.svg>
         </div>
     );
