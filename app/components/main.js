@@ -105,9 +105,9 @@ export default function Home() {
     };
 
     return (
-        <main className="h-screen w-screen">
+        <main>
             <Svg />
-            <div className='h-screen w-screen bg-white'>
+            <div className='h-[110vh] w-screen bg-white'>
                 <motion.div
                     ref={ref}
                     variants={variants}
@@ -122,16 +122,16 @@ export default function Home() {
                     <motion.div initial={{ z: 0, opacity: 0, scale: 0.9 }}
                         animate={{ x: 0, opacity: 1, scale: 1, }}
                         transition={{ duration: 1.4, }}
-                        onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center text-5xl md:text-8xl catch pt-24 md:pt16 z-10 '>
-                        Tomás <p className='text-black text-center mt-2 text-5xl md:text-8xl baca'>Oliveira</p>
+                        onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center text-5xl md:text-8xl xl:text-7xl catch pt-24 md:pt16 z-10 '>
+                        Tomás <p className='text-black text-center mt-2 xl:text-7xl text-5xl md:text-8xl baca'>Oliveira</p>
                     </motion.div>
                 </div>
 
                 <div className='w-screen flex justify-center mt-20'>
 
-                    <div onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center  mt-2 text-2xl md:text-5xl absolute bottom-10 left-20 catch'>Front-End</div>
+                    <div onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center text-2xl md:text-5xl absolute bottom-10 left-20 catch'>Front-End</div>
 
-                    <div className='p-5 z-20'>
+                    <div className='p-0 z-20'>
                         <ThreeDHoverBox />
 
                     </div>

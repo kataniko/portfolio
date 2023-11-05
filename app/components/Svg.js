@@ -21,9 +21,9 @@ export default function Svg() {
 
     useEffect(() => {
         const length = lineRef.current.getTotalLength();
-        setStrokeDashArray(length);
         setStrokeDashOffset(length);
-
+        setStrokeDashArray(length);
+        
         window.addEventListener("scroll", watcher);
         return () => {
             window.removeEventListener("scroll", watcher);
