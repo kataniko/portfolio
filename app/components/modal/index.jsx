@@ -54,8 +54,8 @@ export default function Index({ modal, projects }) {
                             return <div className={styles.modal} style={{ backgroundColor: color }} key={`modal_${index}`}>
                                 <Image
                                     src={`/images/${src}`}
-                                    width={300}
-                                    height={0}
+                                    width={1000}
+                                    height={300}
                                     alt="image"
                                 />
                             </div>

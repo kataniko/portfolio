@@ -12,16 +12,17 @@ import Modal from '../components/modal';
 import Svg from './Svg.js';
 
 
+
 export default function Home() {
 
+    // State and Ref variables
     const [point, setPoint] = useState({ x: 0, y: 0 });
     const { x, y } = point;
     const ref = useRef();
     const [cursorVariant, setCursorVariant] = useState("default");
     const main = useRef();
 
-
-
+    // Initialize LocomotiveScroll and set cursor after 2 seconds
     useEffect(() => {
         (
             async () => {
@@ -36,6 +37,7 @@ export default function Home() {
         )()
     }, [])
 
+    // Handle mouse pointer movement
     useEffect(() => {
         if (!ref.current) return;
         const handlePointerMove = ({ clientX, clientY }) => {
@@ -54,6 +56,7 @@ export default function Home() {
 
     }, []);
 
+    // Variants for animations
     const variants = {
         default: {
             height: 40,
@@ -67,20 +70,21 @@ export default function Home() {
         }
     }
 
+    // Project data
     const projects = [
         {
             title: "KatanaXchain",
-            src: "katana1.jpg",
+            src: "katana1.webp",
             color: "#000000"
         },
         {
             title: "AIonDemand",
-            src: "innovation.jpg",
+            src: "innovation.webp",
             color: "#8C8C8C"
         },
         {
             title: "ajessicanunes",
-            src: "jessi.jpg",
+            src: "jessi.webp",
             color: "#EFE8D3"
         },
         {
@@ -90,12 +94,12 @@ export default function Home() {
         }
     ]
 
-
+    // Functions for handling cursor and modals
     const textEnter = () => setCursorVariant("text");
     const textLeave = () => setCursorVariant("default");
     const [modal, setModal] = useState({ active: false, index: 0 })
 
-
+    // Functions for mouse hover animations
     const handleMouseEnter = () => {
         gsap.to('.my-element', { scale: 1.1, duration: 0.5 });
     };
@@ -106,7 +110,7 @@ export default function Home() {
 
     return (
         <main>
-            <Svg />
+            {/* <Svg /> */}
             <div className='h-[110vh] w-screen bg-white'>
                 <motion.div
                     ref={ref}
@@ -156,12 +160,10 @@ export default function Home() {
 
             <div className='bg-white'>
                 <Image width={1900} height={100} className=' w-screen rotate-180 mt-[-2px] ml-[-2px] ' src={"/wave6.svg"} />
-                <div className='text-7xl md:text-10xl  w-screen text-black  text-center catch '>
+                <div className='text-7xl md:text-9xl   w-screen text-black  text-center catch '>
                     Projects
                 </div>
             </div>
-
-
 
             <div className='  bg-white '>
 
