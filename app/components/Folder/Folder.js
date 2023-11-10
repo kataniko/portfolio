@@ -11,7 +11,7 @@ const Folder = () => {
 
     useEffect(() => {
         setPath(progress);
-    }, [])
+    },)
 
     const setPath = (progress) => {
         const width = window.innerWidth * 0.7;
@@ -63,7 +63,7 @@ const Folder = () => {
             <div className={styles.body}>
                 <div className={styles.line}>
                     <div onMouseEnter={() => { manageMouseEnter() }} onMouseMove={(e) => { manageMouseMove(e) }} onMouseLeave={() => { manageMouseLeave() }} className={styles.box}></div>
-                    <svg>
+                    <svg className='h-[200px]'>
                         <path ref={path}></path>
                     </svg>
                 </div> 

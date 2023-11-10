@@ -4,12 +4,13 @@ import { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { gsap } from 'gsap';
 import Animation from './Animation.js';
-import Description from './Description/description.js'
+import Description from './Description/description.jsx'
 import ThreeDHoverBox from './ThreeDHoverBox.js';
 import Folder from './Folder/Folder';
 import Project from '../components/project';
 import Modal from '../components/modal';
 import Svg from './Svg.js';
+import Description2 from './Description2/description2.jsx';
 
 
 
@@ -153,13 +154,25 @@ export default function Home() {
                 <Animation />
                 <Folder />
                 <Description />
-                <Folder />
 
+
+
+
+            </div>
+            <div className='bg-black flex flex-col  h-auto w-full'>
+
+                <div className=' flex'>
+                    <Description2 />
+                    <div className='w-2/4 h-2/4'>
+                        <Image alt='2' className='object-fit w-2/4' width={700} height={500} src={"/3.png"} />
+                    </div>
+                </div>
+                <Folder />
 
             </div>
 
             <div className='bg-white'>
-                <Image width={1900} height={100} className=' w-screen rotate-180 mt-[-2px] ml-[-2px] ' src={"/wave6.svg"} />
+                <Image alt='wave6' width={1900} height={100} className=' w-screen rotate-180 mt-[-2px] ml-[-2px] ' src={"/wave6.svg"} />
                 <div className='text-7xl md:text-9xl   w-screen text-black  text-center catch '>
                     Projects
                 </div>
