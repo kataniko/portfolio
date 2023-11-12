@@ -3,8 +3,10 @@
     color: white;
     font-size: 3vw;
     text-transform: uppercase;
+    width: 50%;
     margin-top: 0vw;
     margin-left: 0vw;
+    z-index: 100;
 }
 .description p{
     margin: 0px;

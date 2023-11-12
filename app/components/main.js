@@ -147,32 +147,28 @@ export default function Home() {
 
             </div>
 
-            <div className='bg-black flex flex-col  h-auto w-full'>
+            <div className='bg-black flex flex-col  h-[50vh] w-full'>
 
 
                 <Image width={2000} height={800} className='object-fit mt-[-1px] absolute rotate-180' src={"/wave3.svg"} />
-                <Animation />
-                <Folder />
-                <Description />
-
-
-
+              
 
             </div>
-            <div className='bg-black flex flex-col  h-auto w-full'>
+            <div className='bg-black flex flex-col h-[110vh] w-full'>
 
-                <div className=' flex'>
-                    <Description2 />
-                    <div className='w-2/4 h-2/4'>
-                        <Image alt='2' className='object-fit w-2/4' width={700} height={500} src={"/3.png"} />
+                <div className=' flex justify-left items-center'>
+                    <Description />
+                    <div className='w-full absolute flex justify-end z-0'>
+                        <Image alt='2' className='object-fit z-1 w-4/4 ' width={1200} height={500} src={"/4.png"} />
                     </div>
+                    
                 </div>
-                <Folder />
+                
 
             </div>
 
-            <div className='bg-white'>
-                <Image alt='wave6' width={1900} height={100} className=' w-screen rotate-180 mt-[-2px] ml-[-2px] ' src={"/wave6.svg"} />
+            <div className='h-auto bg-white'>
+                <Image alt='wave6' width={2000} height={100} className=' w-[110vw] rotate-180   ' src={"/wave6.png"} />
                 <div className='text-7xl md:text-9xl   w-screen text-black  text-center catch '>
                     Projects
                 </div>
