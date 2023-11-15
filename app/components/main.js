@@ -168,7 +168,7 @@ export default function Home() {
             </div>
 
             <div className='h-auto bg-white'>
-                <Image alt='wave6' width={2000} height={100} className=' w-[110vw] rotate-180   ' src={"/wave6.png"} />
+                
                 <div className='text-7xl md:text-9xl   w-screen text-black  text-center catch '>
                     Projects
                 </div>
