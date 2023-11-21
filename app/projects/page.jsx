@@ -27,7 +27,7 @@ function Page () {
 
                 projects.map((product) => (
 
-                    <div>
+                    <div key={key}>
 
                         <div>
 
