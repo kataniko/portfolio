@@ -4,7 +4,7 @@ import { client } from '../../sanity/lib/client';
 import { urlForImage } from '../../sanity/lib/image';
 import { useState, useEffect } from 'react';
 
-function page () {
+function Page () {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
@@ -64,4 +64,4 @@ function page () {
     )
 }
 
-export default page
+export default Page
