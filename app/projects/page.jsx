@@ -4,7 +4,7 @@ import { client } from '../../sanity/lib/client';
 import { urlForImage } from '../../sanity/lib/image';
 import { useState, useEffect } from 'react';
 
-const page = () => {
+function page () {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
