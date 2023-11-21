@@ -1,17 +1,15 @@
 'use client'
 import Image from 'next/image'
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useLayoutEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { gsap } from 'gsap';
-import Animation from './Animation.js';
 import Description from './Description/description.jsx'
 import ThreeDHoverBox from './ThreeDHoverBox.js';
-import Folder from './Folder/Folder';
 import Project from '../components/project';
 import Modal from '../components/modal';
-import Svg from './Svg.js';
-import Description2 from './Description2/description2.jsx';
-
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Portrait from "../components/Portrait.js"
+import PortraitMobile from "../components/PortraitMobile.js"
 
 
 export default function Home() {
@@ -22,6 +20,7 @@ export default function Home() {
     const ref = useRef();
     const [cursorVariant, setCursorVariant] = useState("default");
     const main = useRef();
+    const image = useRef(null);
 
     // Initialize LocomotiveScroll and set cursor after 2 seconds
     useEffect(() => {
@@ -37,6 +36,20 @@ export default function Home() {
             }
         )()
     }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(image.current, {
+            scrollTrigger: {
+                trigger: image.current,
+                scrub: true,
+            },
+            opacity: 0,
+            right: "-100px",
+            ease: "power2.Out",
+        });
+    }, []);
+
 
     // Handle mouse pointer movement
     useEffect(() => {
@@ -111,8 +124,8 @@ export default function Home() {
 
     return (
         <main>
-            {/* <Svg /> */}
-            <div className='h-[110vh] w-screen bg-white'>
+            {/* Header Section */}
+            <div className=' h-[110vh] w-screen bg-white'>
                 <motion.div
                     ref={ref}
                     variants={variants}
@@ -121,72 +134,126 @@ export default function Home() {
                     style={{
                         transform: `translate(${x}px, ${y}px)`,
                     }}
-                >
-                </motion.div>
+                ></motion.div>
                 <div className='w-screen flex justify-center'>
-                    <motion.div initial={{ z: 0, opacity: 0, scale: 0.9 }}
-                        animate={{ x: 0, opacity: 1, scale: 1, }}
-                        transition={{ duration: 1.4, }}
-                        onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center text-5xl md:text-8xl xl:text-7xl catch pt-24 md:pt16 z-10 '>
-                        Tomás <p className='text-black text-center mt-2 xl:text-7xl text-5xl md:text-8xl baca'>Oliveira</p>
+                    <motion.div
+                        initial={{ z: 0, opacity: 0, scale: 0.9 }}
+                        animate={{ x: 0, opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.4 }}
+                        onMouseEnter={textEnter}
+                        onMouseLeave={textLeave}
+                        className=' text-black text-center text-5xl md:text-8xl xl:text-7xl catch pt-24 md:pt16 z-10'
+                    >
+                        Tomás
+                        <p className=' text-black text-center mt-2 xl:text-7xl text-5xl md:text-8xl baca'>
+                            Oliveira
+                        </p>
                     </motion.div>
                 </div>
 
                 <div className='w-screen flex justify-center mt-20'>
-
-                    <div onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center text-2xl md:text-5xl absolute bottom-10 left-20 catch'>Front-End</div>
+                    <div
+                        onMouseEnter={textEnter}
+                        onMouseLeave={textLeave}
+                        className=' text-black text-center text-2xl md:text-5xl absolute bottom-10 left-20 catch'
+                    >
+                        Front-End
+                    </div>
 
                     <div className='p-0 z-20'>
                         <ThreeDHoverBox />
-
                     </div>
 
-                    <div onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-black text-center mt-10 text-2xl md:text-5xl absolute bottom-10 right-20 absolute catch'>Web Developer</div>
+                    <div
+                        onMouseEnter={textEnter}
+                        onMouseLeave={textLeave}
+                        className=' text-black text-center mt-10 text-2xl md:text-5xl absolute bottom-10 right-20 absolute catch'
+                    >
+                        Web Developer
+                    </div>
+                </div>
+            </div>
+
+            {/* Wave Section */}
+            <div>
+                {/* Wave Section */}
+                <div className='bg-black flex flex-col sm:h-10vh md:h-50vh w-full'>
+                    <Image
+                        width={2000}
+                        height={800}
+                        className='object-cover rotate-180 h-full'
+                        src={"/wave3.svg"}
+                        alt="Wave Image"
+                    />
+                </div>
+
+                {/* Description and Portrait Section */}
+                <div className='bg-black flex  h-screen md:h-full'>
+
+                    {/* Mobile Version */}
+                    <div className='md:hidden'>
+                        <div className='flex flex-col justify-center items-center h-full relative overflow-hidden'>
+
+                            {/* Portrait Image (behind) */}
+                            <div className=' absolute z-0'>
+                                <PortraitMobile  />
+                            </div>
+
+                            {/* Description (on top) */}
+                            <div className='w-full p-4 relative z-10'>
+                                <Description />
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    {/* Desktop Version */}
+                    <div className='hidden md:flex md:flex-col md:justify-center md:items-center md:h-full'>
+                        <div className='w-full flex justify-center z-0'>
+                            <Description />
+                            <Portrait />
+                        </div>
+                    </div>
 
                 </div>
 
-            </div>
 
-            <div className='bg-black flex flex-col  h-[50vh] w-full'>
-
-
-                <Image width={2000} height={800} className='object-fit mt-[-1px] absolute rotate-180' src={"/wave3.svg"} />
-              
-
-            </div>
-            <div className='bg-black flex flex-col h-[110vh] w-full'>
-
-                <div className=' flex justify-left items-center'>
-                    <Description />
-                    <div className='w-full absolute flex justify-end z-0'>
-                        <Image alt='2' className='object-fit z-1 w-4/4 ' width={1200} height={500} src={"/4.png"} />
-                    </div>
-                    
+                <div className='bg-black flex flex-col sm:h-10vh md:h-50vh w-full'>
+                    <Image
+                        width={2000}
+                        height={800}
+                        className='object-cover  h-full'
+                        src={"/wave3.svg"}
+                        alt="Wave Image"
+                    />
                 </div>
-                
-
             </div>
 
+
+            {/* Projects Section */}
             <div className='h-auto bg-white'>
-                
-                <div className='text-7xl md:text-9xl   w-screen text-black  text-center catch '>
+                <div className=' text-7xl md:text-9xl w-screen text-black text-center catch'>
                     Projects
                 </div>
             </div>
 
-            <div className='  bg-white '>
-
-                {
-                    projects.map((project, index) => {
-                        return <Project index={index} title={project.title} setModal={setModal} key={index} />
-                    })
-                }
+            {/* Project List Section */}
+            <div className='bg-white'>
+                {projects.map((project, index) => (
+                    <Project
+                        index={index}
+                        title={project.title}
+                        setModal={setModal}
+                        key={index}
+                    />
+                ))}
                 <Modal modal={modal} projects={projects} />
-
             </div>
-            <div className='h-screen bg-white'>
 
-            </div>
+            {/* Additional Section */}
+            <div className='h-screen bg-white'></div>
         </main>
+
     )
 }

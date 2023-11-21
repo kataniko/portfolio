@@ -17,8 +17,6 @@ export default function Home() {
         const LocomotiveScroll = (await import('locomotive-scroll')).default
         const locomotiveScroll = new LocomotiveScroll();
 
-        
-
         setTimeout(() => {
           setIsLoading(false);
           document.body.style.cursor = 'default'
@@ -30,13 +28,11 @@ export default function Home() {
   }, [])
 
   return (
-    <main >
+    <main>
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
-      {/* <Landing /> */}
       <Main />
-
     </main>
   )
 }
