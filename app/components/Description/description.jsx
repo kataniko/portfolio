@@ -1,49 +1,44 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gsap from 'gsap';
-import styles from './style.module.css';
-import Image from 'next/image';
+import SplitType from 'split-type';
 
-const phrases = [
-    { text: "Hello,", start: "0px bottom", end: "100px bottom" },
-    { text: "I'm Tomás Oliveira, a frontend developer with a passion,", start: "100px bottom", end: "200px bottom" },
-    { text: "for creating engaging user experiences.", start: "200px bottom", end: "300px bottom" },
-    { text: "Welcome to my portfolio!", start: "300px bottom", end: "400px bottom" },
-];
 
-export default function Index() {
-    return (
-        <div className={styles.description}>
-            {phrases.map((phrase, index) => (
-                <AnimatedText key={index} start={phrase.start} end={phrase.end}>
-                    {phrase.text}
-                </AnimatedText>
-            ))}
-        </div>
-    );
-}
+export default function FreshIdeaTesting() {
+  useEffect(() => {
+    gsap.config({ trialWarn: false });
+    gsap.registerPlugin(ScrollTrigger);
 
-function AnimatedText({ children, start, end }) {
-    const text = useRef(null);
+    const split = new SplitType('#target', { type: 'chars' }); // Use SplitType
 
-    useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from(text.current, {
-            scrollTrigger: {
-                trigger: text.current,
-                scrub: true,
-                start,
-                end,
-            },
-            opacity: 0,
-            bottom: "-100px",
-            ease: "power2.Out",
-        });
-    }, [start, end]);
+    const anim = gsap.to(split.chars, {
+      //   delay: 1,
+      color: 'red', // Change color to white
+      stagger: 1,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: ".parent",
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+        markers: true,
 
-    return (
-        <p className='catch text-4xl text-center p-2 md:text-6xl w-4/4' ref={text}>
-            {children}
-        </p>
-    );
+      },
+    });
+  }, []);
+
+  return (
+    <div className="parent">
+      <div className="child">
+        <h2 id="target" className="heading2">
+          &#42;
+          <br />
+          To solve modern business challenges, we have{' '}
+          <span>fresh ideas</span>, innovative tools,
+          and a different outlook on creativity.
+        </h2>
+      </div>
+      {/* Rest of your code */}
+    </div>
+  );
 }

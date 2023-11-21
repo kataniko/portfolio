@@ -160,9 +160,7 @@ export default function Home() {
                         Front-End
                     </div>
 
-                    <div className='p-0 z-20'>
-                        <ThreeDHoverBox />
-                    </div>
+
 
                     <div
                         onMouseEnter={textEnter}
@@ -181,7 +179,7 @@ export default function Home() {
                     <Image
                         width={2000}
                         height={800}
-                        className='object-cover rotate-180 h-full'
+                        className='object-cover mt-[-10px] rotate-180 h-full'
                         src={"/wave3.svg"}
                         alt="Wave Image"
                     />
@@ -196,7 +194,7 @@ export default function Home() {
 
                             {/* Portrait Image (behind) */}
                             <div className=' absolute z-0'>
-                                <PortraitMobile  />
+                                <PortraitMobile />
                             </div>
 
                             {/* Description (on top) */}
@@ -210,8 +208,10 @@ export default function Home() {
 
                     {/* Desktop Version */}
                     <div className='hidden md:flex md:flex-col md:justify-center md:items-center md:h-full'>
-                        <div className='w-full flex justify-center z-0'>
-                            <Description />
+                        <div className='w-full items-center flex justify-center z-0'>
+                            
+                                <Description />
+                         
                             <Portrait />
                         </div>
                     </div>
@@ -223,7 +223,7 @@ export default function Home() {
                     <Image
                         width={2000}
                         height={800}
-                        className='object-cover  h-full'
+                        className='object-cover h-full'
                         src={"/wave3.svg"}
                         alt="Wave Image"
                     />
@@ -232,7 +232,7 @@ export default function Home() {
 
 
             {/* Projects Section */}
-            <div className='h-auto bg-white'>
+            <div className='h-auto mt-[-10px] bg-white'>
                 <div className=' text-7xl md:text-9xl w-screen text-black text-center catch'>
                     Projects
                 </div>
@@ -252,7 +252,11 @@ export default function Home() {
             </div>
 
             {/* Additional Section */}
-            <div className='h-screen bg-white'></div>
+            <div className='h-screen bg-white'>
+                <section>
+                    <Description/>
+                </section>
+            </div>
         </main>
 
     )
