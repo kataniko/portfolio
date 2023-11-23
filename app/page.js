@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
 import Preloader from './components/Preloader/index';
-import Landing from './components/Landing/index';
 import Main from "./components/main"
 
 

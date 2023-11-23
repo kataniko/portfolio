@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 
 
+
 export default function FreshIdeaTesting() {
   useEffect(() => {
     gsap.config({ trialWarn: false });
@@ -13,7 +14,7 @@ export default function FreshIdeaTesting() {
 
     const anim = gsap.to(split.chars, {
       //   delay: 1,
-      color: 'red', // Change color to white
+      color: 'white', // Change color to white
       stagger: 1,
       ease: 'none',
       scrollTrigger: {
@@ -22,7 +23,6 @@ export default function FreshIdeaTesting() {
         end: 'bottom center',
         scrub: true,
         markers: true,
-
       },
     });
   }, []);
@@ -30,15 +30,14 @@ export default function FreshIdeaTesting() {
   return (
     <div className="parent">
       <div className="child">
-        <h2 id="target" className="heading2">
-          &#42;
-          <br />
-          To solve modern business challenges, we have{' '}
-          <span>fresh ideas</span>, innovative tools,
-          and a different outlook on creativity.
-        </h2>
+        <div id="target">
+          <p className='catch text-4xl text-black text-center p-2 md:text-6xl w-full text-center'>
+            To solve modern business challenges, we have
+            , innovative tools,
+            and a different outlook on creativity.
+          </p>
+        </div>
       </div>
-      {/* Rest of your code */}
     </div>
   );
 }

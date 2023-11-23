@@ -6,58 +6,78 @@ import { RiServiceLine } from "react-icons/ri";
 import { useState } from "react";
 import './header.css'
 import { motion } from "framer-motion"
-import { SlArrowRight } from 'react-icons/sl';
+
 
 export default function Header() {
-  const [activeNav, setActiveNav] = useState("#");
+
   return (
 
-    <nav>
+    <nav className='w-auto bg-white absolute top-10 right-10 text-black'>
 
-      <motion.a
-        initial={{ x: +800, opacity: 0, scale: 0.5 }}
-        animate={{ x: 0, opacity: 1, scale: 0.9, }}
-        transition={{ duration: 1.4, }}
-        href="#"
-        onClick={() => setActiveNav("#")}
-        className={activeNav === "#" ? "active" : ""}
-      >
-        <SlArrowRight/>
-        About
-      </motion.a>
+      <div className='gilroy'>
+        Menu
+      </div>
 
-      <motion.a
-        initial={{ x: +800, opacity: 0, scale: 0.5 }}
-        animate={{ x: 0, opacity: 1, scale: 0.9, }}
-        transition={{ duration: 1.6, }}
-        href="#about"
-        onClick={() => setActiveNav("#about")}
-        className={activeNav === "#about" ? "active" : ""}
-      >
-        Skills
-      </motion.a>
+      <div className='flex'>
+        <div className='text-neutral-400 gilroy'>
 
-      <motion.a
-        initial={{ x: +800, opacity: 0, scale: 0.5 }}
-        animate={{ x: 0, opacity: 1, scale: 0.9, }}
-        transition={{ duration: 1.8, }}
-        href="#experience"
-        onClick={() => setActiveNav("#experience")}
-        className={activeNav === "#experience" ? "active" : ""}
-      >
-        Projects
-      </motion.a>
+          <div >
+            1 -------
+          </div>
+          <div>
+            2 -------
+          </div>
+          <div>
+            3 -------
+          </div>
 
-      <motion.a
-        initial={{ x: +800, opacity: 0, scale: 0.5 }}
-        animate={{ x: 0, opacity: 1, scale: 0.9, }}
-        transition={{ duration: 2, }}
-        href="#services"
-        onClick={() => setActiveNav("#services")}
-        className={activeNav === "#services" ? "active" : ""}
-      >
-        Contact
-      </motion.a>
+          <div>
+            4 -------
+          </div>
+        </div>
+        <div className='border-black flex flex-col'>
+
+          <motion.a
+            initial={{ x: +800, opacity: 0, scale: 0.5 }}
+            animate={{ x: 0, opacity: 1, scale: 0.9, }}
+            transition={{ duration: 1.4, }}
+
+          >
+
+            About
+          </motion.a>
+
+          <motion.a
+            initial={{ x: +800, opacity: 0, scale: 0.5 }}
+            animate={{ x: 0, opacity: 1, scale: 0.9, }}
+            transition={{ duration: 1.6, }}
+
+          >
+            Skills
+          </motion.a>
+
+          <motion.a
+            initial={{ x: +800, opacity: 0, scale: 0.5 }}
+            animate={{ x: 0, opacity: 1, scale: 0.9, }}
+            transition={{ duration: 1.8, }}
+
+          >
+            Projects
+          </motion.a>
+
+          <motion.a
+            initial={{ x: +800, opacity: 0, scale: 0.5 }}
+            animate={{ x: 0, opacity: 1, scale: 0.9, }}
+            transition={{ duration: 2, }}
+
+          >
+            Contact
+          </motion.a>
+        </div>
+      </div>
+      <div>
+        
+      </div>
 
     </nav>
   )

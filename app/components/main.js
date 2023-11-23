@@ -10,6 +10,9 @@ import Modal from '../components/modal';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Portrait from "../components/Portrait.js"
 import PortraitMobile from "../components/PortraitMobile.js"
+import Svg from './Svg.js';
+import Spline from '@splinetool/react-spline';
+
 
 
 export default function Home() {
@@ -81,7 +84,8 @@ export default function Home() {
             width: 150,
             background: "white",
             mixBlendMode: "difference"
-        }
+        },
+
     }
 
     // Project data
@@ -124,8 +128,9 @@ export default function Home() {
 
     return (
         <main>
-            {/* Header Section */}
-            <div className=' h-[110vh] w-screen bg-white'>
+
+            <section className=' h-[110vh] w-screen bg-white'>
+
                 <motion.div
                     ref={ref}
                     variants={variants}
@@ -134,101 +139,87 @@ export default function Home() {
                     style={{
                         transform: `translate(${x}px, ${y}px)`,
                     }}
-                ></motion.div>
-                <div className='w-screen flex justify-center'>
+                >
+
+                </motion.div>
+
+                <Spline scene="https://prod.spline.design/7GEk2d0BwUMI2XSN/scene.splinecode" />
+
+                
+
+                <div className='w-screen h-[90vh] items-center z-10 flex-col flex justify-center '>
+                    <div
+                        onMouseEnter={textEnter}
+                        onMouseLeave={textLeave}
+                        className=' text-black text-center text-5xl md:text-8xl  catch'
+                    >
+                        Front-End
+                    </div>
+
+
+                    <div
+                        onMouseEnter={textEnter}
+                        onMouseLeave={textLeave}
+                        className=' text-black text-center  ml-5 text-5xl md:text-8xl  catch'
+                    >
+                        Web Developer
+                    </div>
+                    
+
+                </div>
+                <div >
                     <motion.div
                         initial={{ z: 0, opacity: 0, scale: 0.9 }}
                         animate={{ x: 0, opacity: 1, scale: 1 }}
                         transition={{ duration: 1.4 }}
                         onMouseEnter={textEnter}
                         onMouseLeave={textLeave}
-                        className=' text-black text-center text-5xl md:text-8xl xl:text-7xl catch pt-24 md:pt16 z-10'
+                        className=' text-black text-center text-2xl md:text-2xl catch m-5 z-10'
                     >
-                        Tomás
-                        <p className=' text-black text-center mt-2 xl:text-7xl text-5xl md:text-8xl baca'>
-                            Oliveira
-                        </p>
+                        Tomás Oliveira
+
                     </motion.div>
+                    
                 </div>
+                
+                <Svg />
+            </section>
 
-                <div className='w-screen flex justify-center mt-20'>
-                    <div
-                        onMouseEnter={textEnter}
-                        onMouseLeave={textLeave}
-                        className=' text-black text-center text-2xl md:text-5xl absolute bottom-10 left-20 catch'
-                    >
-                        Front-End
-                    </div>
-
-
-
-                    <div
-                        onMouseEnter={textEnter}
-                        onMouseLeave={textLeave}
-                        className=' text-black text-center mt-10 text-2xl md:text-5xl absolute bottom-10 right-20 absolute catch'
-                    >
-                        Web Developer
-                    </div>
-                </div>
-            </div>
 
             {/* Wave Section */}
-            <div>
-                {/* Wave Section */}
-                <div className='bg-black flex flex-col sm:h-10vh md:h-50vh w-full'>
-                    <Image
-                        width={2000}
-                        height={800}
-                        className='object-cover mt-[-10px] rotate-180 h-full'
-                        src={"/wave3.svg"}
-                        alt="Wave Image"
-                    />
-                </div>
-
-                {/* Description and Portrait Section */}
-                <div className='bg-black flex  h-screen md:h-full'>
-
-                    {/* Mobile Version */}
-                    <div className='md:hidden'>
-                        <div className='flex flex-col justify-center items-center h-full relative overflow-hidden'>
-
-                            {/* Portrait Image (behind) */}
-                            <div className=' absolute z-0'>
-                                <PortraitMobile />
-                            </div>
-
-                            {/* Description (on top) */}
-                            <div className='w-full p-4 relative z-10'>
-                                <Description />
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    {/* Desktop Version */}
-                    <div className='hidden md:flex md:flex-col md:justify-center md:items-center md:h-full'>
-                        <div className='w-full items-center flex justify-center z-0'>
-                            
-                                <Description />
-                         
-                            <Portrait />
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div className='bg-black flex flex-col sm:h-10vh md:h-50vh w-full'>
-                    <Image
-                        width={2000}
-                        height={800}
-                        className='object-cover h-full'
-                        src={"/wave3.svg"}
-                        alt="Wave Image"
-                    />
-                </div>
+            <div className='bg-black flex flex-col sm:h-10vh md:h-50vh w-full'>
+                <Image
+                    width={2000}
+                    height={800}
+                    className='object-cover mt-[-10px] rotate-180 h-full'
+                    src={"/wave3.svg"}
+                    alt="Wave Image"
+                />
             </div>
+
+            <section>
+                <Description />
+                <div className='flex justify-center'>
+                    <Portrait />
+                </div>
+            </section>
+
+
+
+            <div className='bg-black flex flex-col sm:h-10vh md:h-50vh w-full'>
+                <Image
+                    width={2000}
+                    height={800}
+                    className='object-cover h-full'
+                    src={"/wave3.svg"}
+                    alt="Wave Image"
+                />
+            </div>
+            
+            <section className='h-screen bg-white'>
+                asda
+            </section>
+
 
 
             {/* Projects Section */}
@@ -236,11 +227,13 @@ export default function Home() {
                 <div className=' text-7xl md:text-9xl w-screen text-black text-center catch'>
                     Projects
                 </div>
-            </div>
 
-            {/* Project List Section */}
-            <div className='bg-white'>
+
+                {/* Project List Section */}
+
+
                 {projects.map((project, index) => (
+
                     <Project
                         index={index}
                         title={project.title}
@@ -251,12 +244,6 @@ export default function Home() {
                 <Modal modal={modal} projects={projects} />
             </div>
 
-            {/* Additional Section */}
-            <div className='h-screen bg-white'>
-                <section>
-                    <Description/>
-                </section>
-            </div>
         </main>
 
     )

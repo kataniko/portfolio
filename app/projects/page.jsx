@@ -40,7 +40,6 @@ function Page () {
 
                                     <div className="gilroy text-3xl text-center mt-1">{product?.title}</div>
                                     
-
                                 </div>
 
                             </div>
