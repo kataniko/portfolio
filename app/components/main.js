@@ -127,9 +127,9 @@ export default function Home() {
     };
 
     return (
-        <main>
-
-            <section className=' h-[110vh] w-screen bg-white'>
+        <main className='overflow'>
+            <section className=' h-[100vh] w-screen bg-white'>
+                <Spline className='absolute z-20' scene="https://prod.spline.design/7GEk2d0BwUMI2XSN/scene.splinecode" />
 
                 <motion.div
                     ref={ref}
@@ -143,9 +143,7 @@ export default function Home() {
 
                 </motion.div>
 
-                <Spline scene="https://prod.spline.design/7GEk2d0BwUMI2XSN/scene.splinecode" />
 
-                
 
                 <div className='w-screen h-[90vh] items-center z-10 flex-col flex justify-center '>
                     <div
@@ -156,7 +154,6 @@ export default function Home() {
                         Front-End
                     </div>
 
-
                     <div
                         onMouseEnter={textEnter}
                         onMouseLeave={textLeave}
@@ -164,9 +161,11 @@ export default function Home() {
                     >
                         Web Developer
                     </div>
-                    
+
+                    function
 
                 </div>
+
                 <div >
                     <motion.div
                         initial={{ z: 0, opacity: 0, scale: 0.9 }}
@@ -179,19 +178,19 @@ export default function Home() {
                         Tomás Oliveira
 
                     </motion.div>
-                    
+
                 </div>
-                
-                <Svg />
+
+                {/* <Svg /> */}
             </section>
 
 
             {/* Wave Section */}
-            <div className='bg-black flex flex-col sm:h-10vh md:h-50vh w-full'>
+            <div className='bg-black flex flex-col sm:h-10vh md:h-50vh z-10 w-full'>
                 <Image
                     width={2000}
                     height={800}
-                    className='object-cover mt-[-10px] rotate-180 h-full'
+                    className='object-cover mt-[-10px] z-10 rotate-180 h-full'
                     src={"/wave3.svg"}
                     alt="Wave Image"
                 />
@@ -215,7 +214,7 @@ export default function Home() {
                     alt="Wave Image"
                 />
             </div>
-            
+
             <section className='h-screen bg-white'>
                 asda
             </section>
