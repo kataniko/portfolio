@@ -35,7 +35,8 @@ export default function FreshIdeaTesting() {
             To solve modern business challenges, we have
             , innovative tools,
             and a different outlook on creativity.
-            asdasdasdasdasdasda
+            asadasdadsad
+            asdasdadasdasdasdasdasda
           </p>
         </div>
       </div>
