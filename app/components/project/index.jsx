@@ -8,8 +8,8 @@ export default function Index({ index, title, setModal }) {
     return (
 
         <div onMouseEnter={() => { setModal({ active: true, index }) }} onMouseLeave={() => { setModal({ active: false, index }) }} className={styles.project}>
-            <h2 className='text-black catch'>{title}</h2>
-            <p className='text-black'>Design & Development</p>
+            <h2 className='text-black gilroy'>{title}</h2>
+            <p className='text-black gilroy'>Design & Development</p>
         </div>
 
     )

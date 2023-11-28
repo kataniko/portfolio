@@ -28,10 +28,10 @@ export default function FreshIdeaTesting() {
   }, []);
 
   return (
-    <div className="parent">
+    <div className="parent h-screen flex items-center">
       <div className="child">
-        <div id="target">
-          <p className='catch text-4xl text-black text-center p-2 md:text-6xl w-full text-center'>
+        <div  id="target">
+          <p className='catch text-4xl text-[#262626] text-center p-5 md:text-8xl w-full text-center'>
             To solve modern business challenges, we have
             , innovative tools,
             and a different outlook on creativity.

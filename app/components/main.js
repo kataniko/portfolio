@@ -129,7 +129,22 @@ export default function Home() {
     return (
         <main className='overflow'>
             <section className=' h-[100vh] w-screen bg-white'>
-                <Spline className='absolute z-20' scene="https://prod.spline.design/7GEk2d0BwUMI2XSN/scene.splinecode" />
+                <div className='absolute  bottom-0 right-0 flex '>
+                    <Spline scene="https://prod.spline.design/Sj25HJefpapnVKv3/scene.splinecode" />
+                </div>
+                
+                    <motion.div
+                        initial={{ z: 0, opacity: 0, scale: 0.9 }}
+                        animate={{ x: 0, opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.4 }}
+                        onMouseEnter={textEnter}
+                        onMouseLeave={textLeave}
+                        className=' text-black absolute text-center text-2xl md:text-2xl catch m-5 z-10'
+                    >
+                        Tomás Oliveira
+
+                    </motion.div>
+                
 
                 <motion.div
                     ref={ref}
@@ -143,9 +158,7 @@ export default function Home() {
 
                 </motion.div>
 
-
-
-                <div className='w-screen h-[90vh] items-center z-10 flex-col flex justify-center '>
+                <div className='w-screen h-[90vh] items-center z-20 flex-col flex justify-center '>
                     <div
                         onMouseEnter={textEnter}
                         onMouseLeave={textLeave}
@@ -162,24 +175,23 @@ export default function Home() {
                         Web Developer
                     </div>
 
-                    function
+
 
                 </div>
 
-                <div >
+                {/* <div >
                     <motion.div
                         initial={{ z: 0, opacity: 0, scale: 0.9 }}
                         animate={{ x: 0, opacity: 1, scale: 1 }}
                         transition={{ duration: 1.4 }}
                         onMouseEnter={textEnter}
                         onMouseLeave={textLeave}
-                        className=' text-black text-center text-2xl md:text-2xl catch m-5 z-10'
+                        className=' text-black text-center text-2xl md:text-2xl gilroy m-5 z-10'
                     >
                         Tomás Oliveira
 
                     </motion.div>
-
-                </div>
+                </div> */}
 
                 {/* <Svg /> */}
             </section>
@@ -196,9 +208,11 @@ export default function Home() {
                 />
             </div>
 
-            <section>
+            <section className='h-auto'>
+
                 <Description />
-                <div className='flex justify-center'>
+
+                <div className='overflow-visible flex justify-center' >
                     <Portrait />
                 </div>
             </section>
@@ -222,8 +236,8 @@ export default function Home() {
 
 
             {/* Projects Section */}
-            <div className='h-auto mt-[-10px] bg-white'>
-                <div className=' text-7xl md:text-9xl w-screen text-black text-center catch'>
+            <div className='h-auto p-5 mt-[-10px] bg-white'>
+                <div className=' text-7xl md:text-8xl p-2 w-screen text-black text-center catch'>
                     Projects
                 </div>
 

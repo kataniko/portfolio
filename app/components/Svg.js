@@ -31,7 +31,7 @@ export default function Svg() {
     }, []);
 
     return (
-        <div className="w-screen absolute top-0 ">
+        <div className="w-screen absolute top-[50vh] ">
             <motion.svg initial={{ z: 0, opacity: 0, scale: 1 }}
                 animate={{ x: 0, opacity: 1, scale: 1, }}
                 transition={{ duration: 1.4, }} id="svgcontent" className="svg-drawing "width="200" height="350" viewBox="0 0 467 709" fill="none" xmlns="http://www.w3.org/2000/svg">
