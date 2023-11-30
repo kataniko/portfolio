@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      overflow-x: hidden;
+}
+
+
+@font-face {
+  src: url('../public/fonts/Sans and Sons - Charis Moderne Regular.otf');
+  font-family: 'Charis Moderne Regular';
+}
+
+@font-face {
+  src: url('../public/fonts/Gilroy-Light.otf');
+  font-family: 'Gilroy';
+}
+
+@font-face {
+  src: url('../public/fonts/Catchye.otf');
+  font-family: 'Catchye';
+}
+
+@font-face {
+  src: url('../public/fonts/Bacalisties.ttf');
+  font-family: 'Baca';
+}
+
+.baca {
+  font-family: 'Baca', sans-serif;
+  /* Use your font family name */
+}
+
+.catch {
+  font-family: 'Catchye', sans-serif;
+  /* Use your font family name */
+}
+
+/* Replace 'CustomFont' with your actual font family name */
+.charis {
+  font-family: 'Charis Moderne Regular', sans-serif;
+  /* Use your font family name */
+}
+
+.gilroy {
+  font-family: 'gilroy', sans-serif;
+  /* Use your font family name */
+}
+
+.mousefollow {
+  background-color: #000000;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2000;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+
+/* Add these styles to your CSS file */
+.tilt {
+  display: block;
+  height: 500px;
+  width: 350px;
+  background-color: grey;
+  margin: 0 auto;
+  transition: box-shadow 0.1s, transform 0.1s;
+  background-image: url("/main.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  perspective: 500px;
+}
+
+.tilt.clicked {
+  transform: perspective(200px) scale(0.9) rotateX(0) rotateY(0);
+}
+
+.tilt:hover {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
