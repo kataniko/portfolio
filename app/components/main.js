@@ -118,7 +118,7 @@ export default function Home() {
   };
 
   return (
-    <main className="overflow">
+    <main className="overflow bg-[#111111]">
       <section className=" h-[100vh] w-screen ">
         <div className="absolute bottom-0 right-0 flex">
           {/* Visible on desktop (md and above) */}
@@ -136,7 +136,7 @@ export default function Home() {
           initial={{ z: 0, opacity: 0, scale: 0.9 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 1.4 }}
-          className=" text-white futuralight absolute text-center text-xl md:text-3xl m-10 z-10"
+          className=" text-white futuralight absolute text-center text-xl md:text-3xl m-10 "
         >
           Tomás Oliveira
         </motion.div>
@@ -151,7 +151,7 @@ export default function Home() {
           }}
         ></motion.div>
 
-        <div className="w-screen h-[90vh] items-center z-20 flex-col flex justify-center ">
+        <div className="w-screen h-[90vh] items-center  flex-col flex justify-center ">
           <div className=" text-white text-center text-5xl md:text-8xl  futura">
             Front-End
           </div>

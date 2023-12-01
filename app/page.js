@@ -28,7 +28,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
+    <main >
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
