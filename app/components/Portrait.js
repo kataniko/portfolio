@@ -26,8 +26,8 @@ const Portrait = () => {
         <Image
             ref={image}
             alt="2"
-            className="h-screen z-1 "
-            width={1200}
+            className= "absolute h-full right-0 top-0  "
+            width={1500}
             height={500}
             src="/4.png"
         />

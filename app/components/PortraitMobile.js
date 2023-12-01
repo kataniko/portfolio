@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 
-const Portrait = () => {
+const PortraitMobile = () => {
     const image = useRef(null);
 
     useEffect(() => {
@@ -12,11 +12,11 @@ const Portrait = () => {
         gsap.from(image.current, {
             scrollTrigger: {
                 trigger: image.current,
-                start: 'top bottom', // Adjust as needed
-                end: 'center center', // Adjust as needed
+                start: 'top center', // Adjust as needed
+                end: 'bottom center', // Adjust as needed
                 scrub: true,
-              },
-              opacity:0,
+            },
+            opacity: 0,
             
             ease: 'power2.out',
         });
@@ -26,12 +26,12 @@ const Portrait = () => {
         <Image
             ref={image}
             alt="2"
-            className="h-full z-1 "
-            width={1200}
+            className= "absolute h-full right-0 top-0  "
+            width={1500}
             height={500}
             src="/5.png"
         />
     );
 };
 
-export default Portrait;
+export default PortraitMobile;

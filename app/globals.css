@@ -11,8 +11,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 17, 17, 17;
+    --background-end-rgb: 17, 17, 17;
   }
 }
 
@@ -22,12 +22,17 @@ body {
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
       overflow-x: hidden;
+      
 }
 
 
 @font-face {
   src: url('../public/fonts/Sans and Sons - Charis Moderne Regular.otf');
   font-family: 'Charis Moderne Regular';
+}
+@font-face {
+  src: url('../public/fonts/Gilroy-ExtraBold.otf');
+  font-family: 'Gilroy2';
 }
 
 @font-face {
@@ -41,17 +46,29 @@ body {
 }
 
 @font-face {
-  src: url('../public/fonts/Bacalisties.ttf');
-  font-family: 'Baca';
+  src: url('../public/fonts/Futura/FuturaPTMedium.otf');
+  font-family: 'Futuramedium';
+}
+@font-face {
+  src: url('../public/fonts/Futura/FuturaPTBold.otf');
+  font-family: 'Futurabold';
+}
+@font-face {
+  src: url('../public/fonts/Futura/FuturaPTLight.otf');
+  font-family: 'Futuralight';
 }
 
-.baca {
-  font-family: 'Baca', sans-serif;
+.futurabold {
+  font-family: 'Futurabold', sans-serif;
+  /* Use your font family name */
+}
+.futuralight {
+  font-family: 'Futuralight', sans-serif;
   /* Use your font family name */
 }
 
-.catch {
-  font-family: 'Catchye', sans-serif;
+.futura {
+  font-family: 'Futuramedium', sans-serif;
   /* Use your font family name */
 }
 
@@ -67,7 +84,8 @@ body {
 }
 
 .mousefollow {
-  background-color: #000000;
+  background-color: #00000000;
+  border:1px solid #fcfcfc;
   height: 32px;
   width: 32px;
   border-radius: 50%;
