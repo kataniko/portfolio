@@ -7,8 +7,6 @@
 
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background-color:"#11111";
  
   overflow-x: hidden;
       

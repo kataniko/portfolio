@@ -19,7 +19,7 @@ export default function FreshIdeaTesting() {
         start: "top center",
         end: "bottom center",
         scrub: true,
-        markers: true,
+        
       },
     });
   }, []);

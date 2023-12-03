@@ -169,8 +169,8 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <div className="h-auto p-5 mt-[-10px] ">
-        <div className=" text-7xl md:text-8xl p-2 w-screen text-black text-center catch">
+      <div className="h-auto  mt-[-10px] ">
+        <div className=" text-7xl md:text-8xl p-2 w-screen text-white text-center catch">
           Projects
         </div>
 
