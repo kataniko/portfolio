@@ -19,38 +19,42 @@ export default function FreshIdeaTesting() {
         start: "top center",
         end: "bottom center",
         scrub: true,
-        
       },
     });
   }, []);
 
   return (
     <div className="parent h-screen w-screen z-20 flex items-center">
-      <div className="child w-full">
-        <div className="flex flex-col items-center pl-10 w-full" id="target">
+      
+      <div className="child w-full w-full">
+      <div className="w-full text-center futura text-8xl text-[#262626]">SKILLS</div>
+        <div className="flex flex-col  items-center pl-10 w-full" id="target">
+          <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
+            React
+          </p>
           <p className="futura flex text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
-            Tailwind
-          </p>
-          <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
-            Gsap
-          </p>
-          <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
-            React.js
-          </p>
-          <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
-            Responsive Design
+            Next
           </p>
           <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
             Tailwind
           </p>
           <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
+            MaterialUI
+          </p>
+          <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
             Gsap
           </p>
           <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
-            React.js
+            Responsive Design
           </p>
           <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
-            Responsive Design
+            Spline
+          </p>
+          <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
+            ReactThreeFiber
+          </p>
+          <p className="futura text-5xl mt-10 text-[#262626] text-left md:text-8xl w-full ">
+            Creativity
           </p>
         </div>
       </div>

@@ -18,15 +18,15 @@
     opacity: 0.5;
 }
 
-.project:hover h2 {
+.project:hover span {
     transform: translateX(-10px);
 }
 
-.project:hover p {
+.project:hover p{
     transform: translateX(10px);
 }
 
-.project h2 {
+.project span {
     font-size: 50px;
     margin: 0px;
     font-weight: 400;
@@ -51,7 +51,7 @@
        
     }
 
-    .project h2 {
+    .project span {
         font-size: 32px;
         margin: 0px;
         font-weight: 400;

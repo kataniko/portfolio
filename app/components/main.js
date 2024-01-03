@@ -9,7 +9,6 @@ import Modal from "../components/modal";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Portrait from "../components/Portrait.js";
 import PortraitMobile from "../components/PortraitMobile.js";
-import Svg from "./Svg.js";
 import Spline from "@splinetool/react-spline";
 
 export default function Home() {
@@ -82,7 +81,7 @@ export default function Home() {
   // Project data
   const projects = [
     {
-      title: "KatanaXchain",
+      title: "Etterea",
       src: "katana1.webp",
       color: "#000000",
     },
@@ -97,25 +96,15 @@ export default function Home() {
       color: "#EFE8D3",
     },
     {
-      title: "Silencio",
-      src: "silencio.png",
-      color: "#706D63",
+      title: "KatanaXchain",
+      src: "katana1.webp",
+      color: "#000000",
     },
   ];
 
   // Functions for handling cursor and modals
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
+
   const [modal, setModal] = useState({ active: false, index: 0 });
-
-  // Functions for mouse hover animations
-  const handleMouseEnter = () => {
-    gsap.to(".my-element", { scale: 1.1, duration: 0.5 });
-  };
-
-  const handleMouseLeave = () => {
-    gsap.to(".my-element", { scale: 1, duration: 0.3 });
-  };
 
   return (
     <main className="overflow bg-[#111111]">
@@ -136,7 +125,7 @@ export default function Home() {
           initial={{ z: 0, opacity: 0, scale: 0.9 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 1.4 }}
-          className=" text-white futuralight absolute text-center text-xl md:text-3xl m-10 "
+          className=" text-white futuralight  absolute text-center text-xl md:text-3xl m-10 "
         >
           Tomás Oliveira
         </motion.div>
@@ -165,27 +154,42 @@ export default function Home() {
       </section>
 
       <section className="relative h-[180vh] flex items-center">
+        <Spline
+          className="absolute"
+          scene="https://draft.spline.design/aE1bwSL92wCItPdg/scene.splinecode"
+        />
         <Description />
       </section>
 
       {/* Projects Section */}
-      <div className="h-auto  mt-[-10px] ">
-        <div className=" text-7xl md:text-8xl p-2 w-screen text-white text-center catch">
-          Projects
+      <div className="h-screen flex items-center  mt-[-10px] ">
+        <div>
+          <div className=" text-7xl  md:text-8xl p-5 w-screen text-white text-center catch">
+            Projects
+          </div>
+
+          {/* Project List Section */}
+
+          {projects.map((project, index) => (
+            <Project
+              index={index}
+              title={project.title}
+              setModal={setModal}
+              key={index}
+            />
+          ))}
+          <Modal modal={modal} projects={projects} />
         </div>
-
-        {/* Project List Section */}
-
-        {projects.map((project, index) => (
-          <Project
-            index={index}
-            title={project.title}
-            setModal={setModal}
-            key={index}
-          />
-        ))}
-        <Modal modal={modal} projects={projects} />
       </div>
+
+      <div className="h-screen flex items-center  mt-[-10px] ">
+        <div>
+          <div className=" text-8xl  p-5 w-screen text-white text-center futura uppercase">
+            About Me
+          </div>
+        </div>
+      </div>
+      <div className="h-screen flex items-center "></div>
     </main>
   );
 }
